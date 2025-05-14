@@ -11,6 +11,10 @@ session = new_session(model_name='isnet-general-use')
 def index():
     return render_template('index.html')
 
+@app.route('/pricing')
+def pricing():
+    return render_template('pricing.html')
+
 @app.route('/process-single', methods=['POST'])
 def process_single():
     file = request.files['image']

@@ -48,11 +48,6 @@
       transition: all 0.3s ease;
     }
 
-    .card-hover:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-
     .drop-animation {
       animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
@@ -111,50 +106,62 @@
 </head>
 
 <body class="bg-gray-50 min-h-screen font-sans">
-<!-- Header -->
-<header class="bg-white py-6 sticky top-0 z-50 border-b border-gray-100">
-  <div class="max-w-5xl mx-auto px-4">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center">
-        <div class="mr-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
-              clip-rule="evenodd" />
-          </svg>
-        </div>
-        <div>
-          <h1 class="text-2xl font-bold text-gray-800">
-            <span class="text-primary-600">Hapus</span><span class="font-light">BG</span>
-          </h1>
-          <div class="flex items-center mt-1">
-            <span class="text-xs text-gray-500 mr-2">100% Otomatis</span>
-            <span class="bg-green-500 text-white text-xs px-1.5 py-0.5 rounded-sm font-medium">Gratis</span>
+  <!-- Header -->
+  <header class="bg-white py-6 sticky top-0 z-50 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-gray-800">
+              <span class="text-primary-600">Hapus</span><span class="font-light">BG</span>
+            </h1>
+            <div class="flex items-center mt-1">
+              <span class="text-xs text-gray-500 mr-2">100% Otomatis</span>
+              <span class="bg-green-500 text-white text-xs px-1.5 py-0.5 rounded-sm font-medium">Gratis</span>
+            </div>
           </div>
         </div>
+
+        <nav class="hidden md:flex items-center space-x-1">
+          <a href="#"
+            class="px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Beranda</a>
+          <a href="#"
+            class="px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Tentang</a>
+          <a href="#"
+            class="px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Blog</a>
+          <a href="https://trakteer.id/junior_dev/tip?open=true" target="_blank"
+            class="px-3 py-2 text-sm text-white bg-red-500 hover:bg-red-600 rounded-md transition">Trakteer ☕</a>
+          <a href="#"
+            class="ml-2 px-4 py-2 text-sm bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-200 shadow-sm">Login</a>
+        </nav>
+
+        <!-- Tombol Hamburger -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
 
-      <nav class="hidden md:flex items-center space-x-1">
-        <a href="#" class="px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Beranda</a>
-        <a href="#" class="px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Tentang</a>
-        <a href="#" class="px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Blog</a>
-        
-        <!-- Tombol Trakteer -->
-        <a href="https://trakteer.id/junior_dev/tip?open=true" target="_blank" class="ml-2 px-4 py-2 text-sm bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors duration-200 shadow-sm">
-          Trakteer ☕
-        </a>
-
-        <a href="#" class="ml-2 px-4 py-2 text-sm bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-200 shadow-sm">Login</a>
-      </nav>
-
-      <button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-2">
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Beranda</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Tentang</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Blog</a>
+        <a href="https://trakteer.id/junior_dev/tip?open=true" target="_blank"
+          class="block px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">Trakteer ☕</a>
+        <a href="#" class="block px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600">Login</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
 
   <main class="max-w-5xl mx-auto px-4 py-8">
@@ -269,13 +276,14 @@
     <div id="cardsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </main>
 
-  <!-- Footer -->  
+  <!-- Footer -->
   <footer class="bg-gradient-to-b from-gray-900 to-black text-white pt-16 pb-8 relative overflow-hidden">
     <!-- Decorative elements -->
-    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500"></div>
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500">
+    </div>
     <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary-500 opacity-10 rounded-full blur-3xl"></div>
     <div class="absolute -bottom-32 -left-32 w-64 h-64 bg-secondary-500 opacity-10 rounded-full blur-3xl"></div>
-    
+
     <div class="max-w-5xl mx-auto px-4 relative z-10">
       <!-- Footer Content -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
@@ -283,18 +291,23 @@
         <div class="transform transition-all duration-500 hover:translate-y-[-5px]">
           <div class="flex items-center mb-5">
             <div class="relative mr-3 group">
-              <div class="absolute inset-0 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
               <div class="relative bg-gray-900 p-2 rounded-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" viewBox="0 0 20 20"
-                  fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8 text-primary-400 group-hover:text-primary-300 transition-colors duration-300"
+                  viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd"
                     d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
                     clip-rule="evenodd" />
-              </svg>
+                </svg>
               </div>
             </div>
             <h3 class="text-2xl font-bold">
-              <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-300">Hapus</span><span class="font-light">BG</span>
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-300">Hapus</span><span
+                class="font-light">BG</span>
             </h3>
           </div>
           <p class="text-gray-300 text-sm mb-5 leading-relaxed">
@@ -302,19 +315,22 @@
             hitungan detik.
           </p>
           <div class="flex space-x-5">
-            <a href="#" class="text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110">
+            <a href="#"
+              class="text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
               </svg>
             </a>
-            <a href="#" class="text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110">
+            <a href="#"
+              class="text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
               </svg>
             </a>
-            <a href="#" class="text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110">
+            <a href="#"
+              class="text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
@@ -331,26 +347,34 @@
               <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-500 opacity-50"></span>
             </h4>
             <ul class="space-y-3">
-              <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Hapus Background</a></li>
-              <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Edit Foto</a></li>
-              <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Kompresi Gambar</a></li>
-              <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Konversi Format</a></li>
+              <li><a href="#"
+                  class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  Hapus Background</a></li>
+              <li><a href="#"
+                  class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  Edit Foto</a></li>
+              <li><a href="#"
+                  class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  Kompresi Gambar</a></li>
+              <li><a href="#"
+                  class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  Konversi Format</a></li>
             </ul>
           </div>
           <div class="transform transition-all duration-500 hover:translate-y-[-5px]">
@@ -359,26 +383,34 @@
               <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-500 opacity-50"></span>
             </h4>
             <ul class="space-y-3">
-              <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Tentang Kami</a></li>
-              <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Kontak</a></li>
-              <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Blog</a></li>
-              <li><a href="#" class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Karir</a></li>
+              <li><a href="#"
+                  class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  Tentang Kami</a></li>
+              <li><a href="#"
+                  class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  Kontak</a></li>
+              <li><a href="#"
+                  class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  Blog</a></li>
+              <li><a href="#"
+                  class="text-gray-300 hover:text-primary-400 transition-colors duration-300 text-sm flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2 text-primary-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  Karir</a></li>
             </ul>
           </div>
         </div>
@@ -395,8 +427,10 @@
               <input type="email" placeholder="Email Anda"
                 class="px-4 py-3 w-full rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-800 text-sm bg-gray-800 border-0 text-white" />
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
             </div>
@@ -410,8 +444,10 @@
           </form>
           <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
             <div class="flex items-center text-sm text-gray-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 mr-2" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>Kami tidak akan mengirim spam ke email Anda.</span>
             </div>
@@ -428,16 +464,21 @@
           <p class="text-gray-400 text-sm">© 2023 HapusBG. Semua hak dilindungi.</p>
           <div class="flex items-center mt-2 text-gray-500 text-xs">
             <span class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500 mr-1 animate-pulse" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500 mr-1 animate-pulse"
+                viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                  clip-rule="evenodd" />
               </svg>
               Made with love by <span class="text-primary-400 font-medium ml-1">Fadila Fitra Kusuma Jaya</span>
             </span>
           </div>
         </div>
         <div class="flex space-x-6">
-          <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors duration-300 text-sm">Kebijakan Privasi</a>
-          <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors duration-300 text-sm">Syarat & Ketentuan</a>
+          <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors duration-300 text-sm">Kebijakan
+            Privasi</a>
+          <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors duration-300 text-sm">Syarat &
+            Ketentuan</a>
           <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors duration-300 text-sm">Bantuan</a>
         </div>
       </div>
@@ -445,8 +486,7 @@
   </footer>
 
   <!-- Modal Editor -->
-  <div id="editor-modal"
-    class="modal hidden backdrop-blur-sm fixed inset-0 z-50 p-0">
+  <div id="editor-modal" class="modal hidden backdrop-blur-sm fixed inset-0 z-50 p-0">
     <div
       class="modal-content bg-white rounded-none shadow-xl p-0 max-w-none mx-auto overflow-hidden transition-all duration-300 transform dark:bg-gray-800">
       <!-- Header -->
@@ -464,15 +504,17 @@
       <!-- Content - 2 Column Layout -->
       <div class="flex flex-col md:flex-row h-[calc(100vh-120px)]">
         <!-- Left Column - Controls -->
-        <div class="w-full md:w-1/3 border-r border-gray-200 dark:border-gray-700 p-6 overflow-y-auto bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+        <div
+          class="w-full md:w-1/3 border-r border-gray-200 dark:border-gray-700 p-6 overflow-y-auto bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
           <div class="space-y-8">
             <!-- Color Picker -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md">
+            <div
+              class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md">
               <label for="bg-color"
                 class="block text-gray-700 dark:text-gray-300 font-medium mb-3 flex items-center text-sm">
-                <span class="flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                    fill="currentColor">
+                <span
+                  class="flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
                       d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
                       clip-rule="evenodd" />
@@ -487,25 +529,30 @@
                   <button
                     class="w-8 h-8 rounded-full bg-white border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 transform transition-transform hover:scale-110 shadow-sm"
                     onclick="setPresetColor('#FFFFFF')"></button>
-                  <button class="w-8 h-8 rounded-full bg-blue-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transform transition-transform hover:scale-110 shadow-sm"
+                  <button
+                    class="w-8 h-8 rounded-full bg-blue-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transform transition-transform hover:scale-110 shadow-sm"
                     onclick="setPresetColor('#3B82F6')"></button>
-                  <button class="w-8 h-8 rounded-full bg-green-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transform transition-transform hover:scale-110 shadow-sm"
+                  <button
+                    class="w-8 h-8 rounded-full bg-green-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transform transition-transform hover:scale-110 shadow-sm"
                     onclick="setPresetColor('#10B981')"></button>
-                  <button class="w-8 h-8 rounded-full bg-red-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transform transition-transform hover:scale-110 shadow-sm"
+                  <button
+                    class="w-8 h-8 rounded-full bg-red-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transform transition-transform hover:scale-110 shadow-sm"
                     onclick="setPresetColor('#EF4444')"></button>
-                  <button class="w-8 h-8 rounded-full bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transform transition-transform hover:scale-110 shadow-sm"
+                  <button
+                    class="w-8 h-8 rounded-full bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transform transition-transform hover:scale-110 shadow-sm"
                     onclick="setPresetColor('#F59E0B')"></button>
                 </div>
               </div>
             </div>
 
             <!-- Image Upload -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md">
+            <div
+              class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md">
               <label for="bg-image"
                 class="block text-gray-700 dark:text-gray-300 font-medium mb-3 flex items-center text-sm">
-                <span class="flex items-center justify-center bg-gradient-to-r from-secondary-500 to-secondary-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                    fill="currentColor">
+                <span
+                  class="flex items-center justify-center bg-gradient-to-r from-secondary-500 to-secondary-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
                       d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
                       clip-rule="evenodd" />
@@ -517,7 +564,8 @@
                 <input type="file" id="bg-image" accept="image/*" onchange="changeBackgroundImage()" class="hidden">
                 <button onclick="document.getElementById('bg-image').click()"
                   class="w-full py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition-all duration-300 flex items-center justify-center text-sm shadow-sm hover:shadow group">
-                  <span class="bg-secondary-100 dark:bg-secondary-900 p-1.5 rounded-full mr-3 group-hover:bg-secondary-200 dark:group-hover:bg-secondary-800 transition-colors duration-300">
+                  <span
+                    class="bg-secondary-100 dark:bg-secondary-900 p-1.5 rounded-full mr-3 group-hover:bg-secondary-200 dark:group-hover:bg-secondary-800 transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-secondary-500" viewBox="0 0 20 20"
                       fill="currentColor">
                       <path fill-rule="evenodd"
@@ -531,11 +579,12 @@
             </div>
 
             <!-- Resize -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md">
+            <div
+              class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md">
               <h3 class="text-gray-700 dark:text-gray-300 font-medium mb-3 flex items-center text-sm">
-                <span class="flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                    fill="currentColor">
+                <span
+                  class="flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path
                       d="M4 3a1 1 0 000 2h12a1 1 0 100-2H4zM3 7a1 1 0 011-1h2a1 1 0 110 2H5v6h2a1 1 0 110 2H4a1 1 0 01-1-1V7zm10 6h2v-6h-2a1 1 0 010-2h3a1 1 0 011 1v10a1 1 0 01-1 1h-3a1 1 0 010-2z" />
                   </svg>
@@ -550,17 +599,19 @@
                   class="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 shadow-sm" />
               </div>
               <label class="flex items-center text-sm mt-2 text-gray-600 dark:text-gray-400 ml-2">
-                <input type="checkbox" id="lock-aspect" checked class="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-500 rounded"> 
+                <input type="checkbox" id="lock-aspect" checked
+                  class="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-500 rounded">
                 <span>Lock Aspect Ratio</span>
               </label>
             </div>
 
             <!-- Crop Section -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md">
+            <div
+              class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md">
               <h3 class="text-gray-700 dark:text-gray-300 font-medium mb-3 flex items-center text-sm">
-                <span class="flex items-center justify-center bg-gradient-to-r from-green-500 to-green-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                    fill="currentColor">
+                <span
+                  class="flex items-center justify-center bg-gradient-to-r from-green-500 to-green-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
                       d="M4 3a1 1 0 00-1 1v2a1 1 0 102 0V5h2a1 1 0 100-2H4zm11 2a1 1 0 112 0v10a1 1 0 11-2 0V5zM6 17a1 1 0 100 2h10a1 1 0 100-2H6z"
                       clip-rule="evenodd" />
@@ -571,14 +622,17 @@
               <div class="flex gap-3 mt-2">
                 <button onclick="startCropper()"
                   class="flex-1 py-2.5 px-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 text-sm transition-all duration-300 shadow-sm hover:shadow focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
                   Mulai Crop
                 </button>
                 <button onclick="applyCrop()"
                   class="flex-1 py-2.5 px-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 text-sm transition-all duration-300 shadow-sm hover:shadow focus:ring-2 focus:ring-offset-2 focus:ring-green-500 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
                   Simpan Crop
@@ -591,9 +645,9 @@
         <!-- Right Column - Preview -->
         <div class="w-full md:w-2/3 p-6 flex flex-col">
           <h3 class="text-gray-700 dark:text-gray-300 font-medium mb-4 flex items-center text-base">
-            <span class="flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                fill="currentColor">
+            <span
+              class="flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white p-1.5 rounded-lg mr-3 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                 <path fill-rule="evenodd"
                   d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
@@ -602,20 +656,26 @@
             </span>
             <span>Preview</span>
           </h3>
-          <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 flex-grow relative overflow-hidden border border-gray-100 dark:border-gray-700 shadow-lg transition-all duration-300 hover:shadow-xl">
+          <div
+            class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 flex-grow relative overflow-hidden border border-gray-100 dark:border-gray-700 shadow-lg transition-all duration-300 hover:shadow-xl">
             <!-- Background pattern -->
             <div class="absolute inset-0 bg-grid-primary-100/20 opacity-30"></div>
             <!-- Preview container with glass effect -->
-            <div class="h-full w-full flex items-center justify-center rounded-lg overflow-hidden backdrop-blur-sm bg-white/30 dark:bg-black/20 shadow-xl relative z-10 transition-transform duration-500 hover:scale-[1.01]">
-              
+            <div
+              class="h-full w-full flex items-center justify-center rounded-lg overflow-hidden backdrop-blur-sm bg-white/30 dark:bg-black/20 shadow-xl relative z-10 transition-transform duration-500 hover:scale-[1.01]">
+
               <!-- Image with enhanced styling -->
               <div class="relative p-4 z-10 w-full h-full flex items-center justify-center">
-                <img id="image-preview" src="" alt="Preview" class="max-w-full max-h-full object-contain rounded-md shadow-2xl transition-all duration-300 hover:shadow-primary-500/20" />
-                
+                <img id="image-preview" src="" alt="Preview"
+                  class="max-w-full max-h-full object-contain rounded-md shadow-2xl transition-all duration-300 hover:shadow-primary-500/20" />
+
                 <!-- Loading overlay -->
-                <div id="preview-loading" class="absolute inset-0 bg-white/80 dark:bg-black/80 flex items-center justify-center rounded-lg z-20 hidden">
+                <div id="preview-loading"
+                  class="absolute inset-0 bg-white/80 dark:bg-black/80 flex items-center justify-center rounded-lg z-20 hidden">
                   <div class="flex flex-col items-center">
-                    <div class="w-12 h-12 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mb-3"></div>
+                    <div
+                      class="w-12 h-12 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mb-3">
+                    </div>
                     <p class="text-primary-600 dark:text-primary-400 font-medium">Memuat preview...</p>
                   </div>
                 </div>
@@ -631,19 +691,24 @@
         <!-- Left side - Stats or info -->
         <div class="flex items-center space-x-4">
           <div class="flex items-center text-gray-500 dark:text-gray-400 text-xs">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-primary-500" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-primary-500" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                clip-rule="evenodd" />
             </svg>
             <span>Terakhir diubah: <span class="font-medium">Baru saja</span></span>
           </div>
         </div>
-        
+
         <!-- Right side - Action buttons -->
         <div class="flex items-center space-x-3">
           <button onclick="closeEditorModal()"
             class="px-4 py-2 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-300 font-medium text-sm border border-gray-200 dark:border-gray-600 flex items-center shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 focus:ring-opacity-50">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
             </svg>
             Batal
           </button>
@@ -664,7 +729,8 @@
                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
             Download
-            <span class="absolute -top-2 -right-2 bg-white text-green-600 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">HD</span>
+            <span
+              class="absolute -top-2 -right-2 bg-white text-green-600 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">HD</span>
           </button>
         </div>
       </div>
@@ -674,12 +740,21 @@
 
   <script src="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.js"></script>
   <link href="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script>
     const dropArea = document.getElementById('dropArea');
     const input = document.getElementById('imageInput');
     const container = document.getElementById('cardsContainer');
     const downloadAllBtn = document.getElementById('downloadAllBtn');
     const processingStatus = document.getElementById('processingStatus');
+
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
     let cropper;
 
@@ -946,20 +1021,48 @@
               </div>
             </div>
             <div class="flex space-x-2 w-full">
-              <a href="${url}" download="${filename}"
-                class="flex-1 px-3 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-sm rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all duration-300 text-center shadow-md hover:shadow-lg transform hover:scale-[1.02] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                <span>Download</span>
-              </a>
-              <button class="px-3 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] flex items-center justify-center" onclick="deleteImage(this)">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              <div class="relative group w-full">
+
+                <button class="flex-1 px-3 py-2.5 bg-primary-600 text-white text-sm rounded-lg hover:bg-primary-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] flex items-center justify-center group relative overflow-hidden w-full" onclick="toggleDropdown(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  <span class="relative z-10">Download</span>
+                </button>
+              <div class="hidden absolute z-30 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg" data-dropdown>
+                <a href="${url}" download="${filename}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Download HD (PNG)</a>
+                <button onclick="downloadCompressed(this, 'image/png', 'png')" data-url="${url}" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Download Compressed (PNG)</button>
+                <button onclick="downloadCompressed(this, 'image/jpeg', 'jpg')" data-url="${url}" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Download Compressed (JPG)</button>
+                <button onclick="downloadCompressed(this, 'image/webp', 'webp')" data-url="${url}" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Download Compressed (WEBP)</button>
+              </div>
+
+              </div>
+
+              <button 
+                class="p-2.5 bg-red-500 text-white text-sm rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] flex items-center justify-center group relative overflow-hidden" 
+                onclick="confirmDelete(this)">
+                <!-- Efek lingkaran pada hover -->
+                <span class="absolute w-0 h-0 rounded-full bg-white opacity-10 group-hover:w-20 group-hover:h-20 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-out"></span>
+                <!-- Ikon hapus yang lebih detail -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 6 5 6 21 6" />
+                  <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                  <line x1="10" y1="11" x2="10" y2="17" />
+                  <line x1="14" y1="11" x2="14" y2="17" />
                 </svg>
               </button>
-              <button class="px-3 py-2.5 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] flex items-center justify-center" onclick="openEditorModal('${url}')">
-                <span>Edit</span>
+              <button 
+                class="p-2.5 bg-yellow-500 text-white text-sm rounded-lg hover:bg-yellow-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] flex items-center justify-center group relative overflow-hidden" 
+                onclick="openEditorModal('${url}')">
+                <!-- Efek lingkaran pada hover -->
+                <span class="absolute w-0 h-0 rounded-full bg-white opacity-10 group-hover:w-20 group-hover:h-20 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-out"></span>
+                <!-- Ikon edit yang lebih detail -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+                  <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+                </svg>
               </button>
             </div>
           `;
@@ -982,6 +1085,23 @@
       }
 
       input.value = '';
+    }
+
+    function confirmDelete(button) {
+      Swal.fire({
+        title: 'Yakin ingin menghapus gambar ini?',
+        text: 'Tindakan ini tidak dapat dibatalkan!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ya, hapus',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          deleteImage(button);
+        }
+      });
     }
 
     function deleteImage(button) {
@@ -1010,6 +1130,58 @@
         link.click();
       });
     });
+
+    function downloadCompressed(button, mimeType = "image/png", ext = "png") {
+      const imageUrl = button.dataset.url;
+
+      fetch(imageUrl)
+        .then(res => res.blob())
+        .then(blob => {
+          const img = new Image();
+          img.onload = function () {
+            // Resize ke lebar maksimal 1024px
+            const MAX_WIDTH = 1024;
+            let width = img.width;
+            let height = img.height;
+
+            if (width > MAX_WIDTH) {
+              const scale = MAX_WIDTH / width;
+              width = MAX_WIDTH;
+              height = Math.round(height * scale);
+            }
+
+            const canvas = document.createElement("canvas");
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, width, height);
+
+            canvas.toBlob((compressedBlob) => {
+              const url = URL.createObjectURL(compressedBlob);
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = `compressed_image.${ext}`;
+              a.click();
+              URL.revokeObjectURL(url);
+            }, mimeType, mimeType === 'image/jpeg' ? 0.5 : 0.6); // kualitas bisa diatur
+          };
+          img.src = URL.createObjectURL(blob);
+        });
+
+      // Tutup dropdown
+      document.querySelectorAll('[data-dropdown]').forEach(el => el.classList.add('hidden'));
+    }
+
+
+
+    function toggleDropdown(button) {
+      const dropdown = button.nextElementSibling;
+      document.querySelectorAll('[data-dropdown]').forEach(el => {
+        if (el !== dropdown) el.classList.add('hidden');
+      });
+      dropdown.classList.toggle('hidden');
+    }
+
   </script>
 
 </body>
