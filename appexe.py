@@ -3,6 +3,8 @@ from rembg import new_session, remove
 from PIL import Image, ImageFilter
 import io
 import uuid
+import webbrowser
+import threading
 
 app = Flask(__name__)
 session = new_session(model_name='isnet-general-use')
@@ -46,4 +48,8 @@ def process_single():
     return send_file(buf, mimetype='image/png', as_attachment=False)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    def open_browser():
+        webbrowser.open_new('http://127.0.0.1:5000')
+
+    threading.Timer(1.5, open_browser).start()  # delay dikit biar server udah siap
+    app.run(debug=False)
