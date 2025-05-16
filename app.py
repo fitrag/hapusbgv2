@@ -1,6 +1,6 @@
 from flask import Flask, request, send_file, render_template, jsonify
 from rembg import new_session, remove
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageEnhance
 import io
 import uuid
 
@@ -30,7 +30,7 @@ def process_single():
     original_size = original_img.size
 
     # Resize ke 1.5x untuk meningkatkan detail tepi
-    upscale_size = (int(original_size[0] * 1.5), int(original_size[1] * 1.5))
+    upscale_size = (int(original_size[0] * 2.5), int(original_size[1] * 2.5))
     upscaled_img = original_img.resize(upscale_size, Image.LANCZOS)
 
     # Konversi gambar upscale ke bytes
@@ -59,6 +59,28 @@ def process_single():
     buf.seek(0)
 
     return send_file(buf, mimetype='image/png', as_attachment=False)
+    
+@app.route('/remove-bg-crop', methods=['POST'])
+def remove_bg_crop():
+    file = request.files['image']
+    input_bytes = file.read()
+
+    # Buka gambar hasil background removal
+    result_img = Image.open(io.BytesIO(input_bytes)).convert("RGBA")
+
+    # Deteksi bounding box dari objek yang masih tersisa
+    bbox = result_img.getbbox()
+    if bbox:
+        cropped_img = result_img.crop(bbox)
+    else:
+        cropped_img = result_img  # fallback kalau bbox gak terdeteksi
+
+    # Convert ke BytesIO untuk diunduh
+    buf = io.BytesIO()
+    cropped_img.save(buf, format="PNG")
+    buf.seek(0)
+
+    return send_file(buf, mimetype="image/png")
 
 if __name__ == '__main__':
     app.run(debug=True)
