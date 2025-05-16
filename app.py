@@ -139,5 +139,38 @@ def remove_bg_crop():
 
     return send_file(buf, mimetype="image/png")
 
+@app.route('/magic-brush', methods=['POST'])
+def magic_brush():
+    try:
+        image_file = request.files['image']
+        mask_file = request.files['mask']
+
+        image = Image.open(image_file.stream).convert('RGBA')
+        mask = Image.open(mask_file.stream).convert('L')  # grayscale
+
+        # Convert to numpy arrays
+        np_image = np.array(image)
+        np_mask = np.array(mask)
+
+        # Buat biner mask (255 = area terseleksi)
+        binary_mask = np.where(np_mask > 10, 255, 0).astype(np.uint8)
+
+        # Hapus seluruh gambar dengan rembg
+        removed = remove(image_file.stream.read())
+        removed_image = Image.open(io.BytesIO(removed)).convert('RGBA')
+        np_removed = np.array(removed_image)
+
+        # Gabungkan hanya bagian yang terseleksi
+        combined = np.where(binary_mask[..., None] == 255, np_removed, np_image)
+
+        final = Image.fromarray(combined, 'RGBA')
+        output = io.BytesIO()
+        final.save(output, format='PNG')
+        output.seek(0)
+        return send_file(output, mimetype='image/png')
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True)

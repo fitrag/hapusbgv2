@@ -1004,7 +1004,11 @@
             <input type="range" id="brushSize" min="1" max="100" value="20" 
               class="w-full h-2 bg-gray-200 dark:bg-gray-600 rounded-lg appearance-none cursor-pointer accent-primary-500" />
           </div>
-          
+          <button 
+            onclick="useMagicBrush()"
+            class="p-2 bg-purple-600 text-white rounded hover:bg-purple-700 mt-2 transition-all">
+            🪄 Kuas Ajaib
+          </button>
           <!-- Tips penggunaan -->
           <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-lg border border-blue-100 dark:border-blue-800">
             <div class="flex">
@@ -1210,6 +1214,41 @@
       }
       drawing = false;
     }
+
+    async function useMagicBrush() {
+  const canvas = brushCanvas;
+
+  // Ambil mask dari brush canvas
+  const maskBlob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+
+  // Ambil gambar TERKINI dari brushImage
+  const currentImgUrl = document.getElementById('brushImage').src;
+  const imageBlob = await (await fetch(currentImgUrl)).blob();
+
+  const formData = new FormData();
+  formData.append('image', imageBlob, 'image.png');
+  formData.append('mask', maskBlob, 'mask.png');
+
+  const res = await fetch('/magic-brush', {
+    method: 'POST',
+    body: formData
+  });
+
+  if (!res.ok) {
+    const err = await res.json();
+    alert(err.error || 'Magic brush failed');
+    return;
+  }
+
+  const blob = await res.blob();
+  const resultUrl = URL.createObjectURL(blob);
+
+  const brushImage = document.getElementById('brushImage');
+  brushImage.src = resultUrl;
+
+  brushCtx.clearRect(0, 0, brushCanvas.width, brushCanvas.height);
+}
+
 
     function resizeBrushCanvas() {
       const canvas = document.getElementById('brushCanvas');
